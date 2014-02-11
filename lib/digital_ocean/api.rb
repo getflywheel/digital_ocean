@@ -61,9 +61,16 @@ module DigitalOcean
       DigitalOcean::Resource::Image.new(@faraday)
     end
 
+
     def domains
       DigitalOcean::Resource::Domain.new(@faraday)
     end
+
+
+    def events
+      DigitalOcean::Resource::Event.new(@faraday)
+    end
+
 
     def default_faraday
       Faraday.new(:url => @base_url, :ssl => @ssl) do |faraday|
