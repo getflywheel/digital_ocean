@@ -12,6 +12,10 @@ module DigitalOcean
       def delete(id)
         @connection.get("/images/#{id}/destroy").body
       end
+
+      def transfer(id, opts = {})
+        @connection.get("/images/#{id}/transfer", opts).body
+      end
     end
   end
 end
